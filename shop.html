@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collection | Glam Hair Accessories</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">GLAM<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="checkout.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon-wrapper" onclick="toggleCart()">
+                    🛍️ <span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section style="min-height: 80vh;">
+        <h2 class="section-title">The Boutique Collection</h2>
+
+        <div class="shop-controls">
+            <div class="search-bar">
+                <input type="text" id="productSearch" placeholder="Search product line..." oninput="filterAndSearchProducts()">
+            </div>
+            <div class="filter-tags">
+                <button class="filter-btn active" onclick="filterCategory('All', this)">All Items</button>
+                <button class="filter-btn" onclick="filterCategory('Wigs', this)">Wigs</button>
+                <button class="filter-btn" onclick="filterCategory('Hair Extensions', this)">Extensions</button>
+                <button class="filter-btn" onclick="filterCategory('Clips & Bands', this)">Clips & Bands</button>
+                <button class="filter-btn" onclick="filterCategory('Bonnets & Scarves', this)">Bonnets & Scarves</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="shop-catalog-grid">
+            </div>
+    </section>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items-container" id="cart-items-target">
+            </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-total-val">TSh 0</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary" style="display: block;">Proceed to Order</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Glam Hair Accessories. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            renderShopCatalog(products);
+        });
+    </script>
+</body>
+</html>

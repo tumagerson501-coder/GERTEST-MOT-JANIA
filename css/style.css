@@ -1,0 +1,609 @@
+/*  1. VARIABLES & RESET */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-rose: #b76e79;
+    --primary-light: #f7e7e8;
+    --accent-pink: #ffd1dc;
+    --dark-charcoal: #1a1a1a;
+    --pure-white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 32px rgba(183, 110, 121, 0.15);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #fdfbfc;
+    color: var(--dark-charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   2. REUSABLE COMPONENTS & NAVIGATION
+   ========================================================================== */
+header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--dark-charcoal);
+}
+
+.logo span {
+    color: var(--primary-rose);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-rose);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: var(--primary-rose);
+    color: var(--pure-white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-rose);
+    color: var(--pure-white);
+    box-shadow: 0 4px 15px rgba(183, 110, 121, 0.4);
+}
+
+.btn-primary:hover {
+    background: #a25f69;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--dark-charcoal);
+    border: 2px solid var(--primary-rose);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. PAGE 1: HERO, FEATURES & PRODUCTS
+   ========================================================================== */
+.hero {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #fdfbfc 0%, var(--primary-light) 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--dark-charcoal);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Section Basics */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Product UI Card */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background: var(--pure-white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-img-holder {
+    height: 320px;
+    background: #fcf8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-img-holder img {
+    scale: 1.05;
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--primary-rose);
+    font-size: 1.15rem;
+}
+
+.rating {
+    color: #f39c12;
+    font-size: 0.9rem;
+}
+
+/* Why Choose Us & Testimonials */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.feature-box {
+    padding: 2.5rem 1.5rem;
+    background: var(--pure-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-box h3 { margin: 1rem 0 0.5rem 0; }
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   4. PAGE 2: SHOP ENGINE & SIDEBAR CART
+   ========================================================================== */
+.shop-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    width: 300px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-bar input:focus { border-color: var(--primary-rose); }
+
+.filter-tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    background: var(--pure-white);
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary-rose);
+    color: var(--pure-white);
+    border-color: var(--primary-rose);
+}
+
+.qty-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.qty-btn {
+    background: #eee;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Slide-out Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 420px;
+    height: 100vh;
+    background: var(--pure-white);
+    box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.cart-sidebar.open { right: 0; }
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.close-cart {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.cart-items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-info { flex-grow: 1; }
+
+.remove-item {
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.cart-footer {
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   5. PAGE 3: CHECKOUT & FORM SYSTEM
+   ========================================================================== */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.checkout-card {
+    background: var(--pure-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.checkout-card h3 {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-rose);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.summary-total {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Success Modal UI */
+.success-screen {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+.success-icon {
+    font-size: 4rem;
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+/* Contact Module & Map */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.contact-methods a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--pure-white);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.map-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   6. FOOTER & RESPONSIVE GRID
+   ========================================================================== */
+footer {
+    background: var(--dark-charcoal);
+    color: #ccc;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 3rem;
+}
+
+.footer-section h3 {
+    color: var(--pure-white);
+    margin-bottom: 1.2rem;
+}
+
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 0.6rem; }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Overrides (Mobile-First approach optimization) */
+@media (max-width: 968px) {
+    .hero-container, .checkout-layout, .contact-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .cart-sidebar { width: 100%; right: -100%; }
+}
+
+@media (max-width: 600px) {
+    .nav-links { display: none; } /* Simplified layout for raw presentation */
+    .shop-controls { flex-direction: column; align-items: stretch; }
+    .search-bar input { width: 100%; }
+}

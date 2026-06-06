@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <link rel="stylesheet" href="order/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>PLACE ORDER</h1>
+            <p>Send us a message and we'll get back to you.</p>
+
+            <form id="contact-form">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea
+                        name="message"
+                        rows="6"
+                        placeholder="Type your message here..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">
+                    Send Message
+                </button>
+<h3 style="background-color: blue;text-align: center;"><a href="index.html">
+                    back to main page</a></h3>
+                <p id="status"></p>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="order/script.js"></script>
+
+</body>
+</html>

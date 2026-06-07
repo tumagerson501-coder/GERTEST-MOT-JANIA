@@ -4,14 +4,10 @@
 
 // 1. Static Comprehensive Product Database Catalog Data
 const products = [
-    { id: 1, name: "Luxury HD Lace Wig", price: 350000, category: "Wigs", rating: 4.9, img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=400&q=80", desc: "Premium 100% Brazilian human hair structure." },
-    { id: 2, name: "Remy Hair Extensions", price: 180000, category: "Hair Extensions", rating: 4.8, img: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=400&q=80", desc: "Seamless double-drawn natural weave tracks." },
-    { id: 3, name: "Rose Gold Claw Clip Set", price: 25000, category: "Clips & Bands", rating: 4.7, img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=400&q=80", desc: "Elegant metallic hold architecture for fine hair style styling." },
-    { id: 4, name: "Velvet Baroque Headband", price: 35000, category: "Clips & Bands", rating: 4.6, img: "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?auto=format&fit=crop&w=400&q=80", desc: "Soft padded feminine detail presentation piece." },
-    { id: 5, name: "Premium Silk Sleep Bonnet", price: 40000, category: "Bonnets & Scarves", rating: 5.0, img: "https://images.unsplash.com/photo-1631730359575-38e4755d772b?auto=format&fit=crop&w=400&q=80", desc: "100% Mulberry silk layout keeping moisture pristine overnight." },
-    { id: 6, name: "Satin Head Scarf Accent", price: 30000, category: "Bonnets & Scarves", rating: 4.5, img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=400&q=80", desc: "Versatile styling ornament configuration mapping beauty highlights." },
-    { id: 7, name: "Minimalist Elegant Pearl Pins", price: 15000, category: "Clips & Bands", rating: 4.8, img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80", desc: "Gorgeous handplaced pearl pinning mechanisms." },
-    { id: 8, name: "Ergonomic Detangling Brush", price: 20000, category: "Accessories", rating: 4.7, img: "https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&w=400&q=80", desc: "Anti-static bristles perfect for maintaining texture health." }
+    { id: 1, name: "hair clip", price: 2000, category: "hair clip", rating: 4.9, img: "https://media.istockphoto.com/id/1277309174/photo/these-hair-clips-are-flattering-on-everyone.jpg?s=612x612&w=0&k=20&c=QwuSRTG1F_D8htk7UtT2NmbSfMm6uYthkGIiJDAQWdQ=", desc: "Premium hair structure." },
+    { id: 2, name: "Hair bands", price: 1000, category: "Hair bands", rating: 4.8, img: "WhatsApp Image 2026-06-06 at 16.03.57.jpeg", desc: "Seamless double-drawn natural weave tracks." },
+    {id: 3, name: "Bobby pins" ,price:1500 ,category: "bobby pins" ,rating :4.6 , img :"https://share.google/ddE8vBKJfFphaPykb" ,desc :"beauty"},
+    { id: 4, name: "Decorative headbands", price: 3000, category: "Decorative headbands", rating: 4.6, img: "https://share.google/E7UPauv8a1n21T3Bu", desc: "Soft padded feminine detail presentation piece." },
 ];
 
 // Initialize Cart Array from localStorage or empty

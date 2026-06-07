@@ -6,7 +6,7 @@
 const products = [
     { id: 1, name: "hair clip", price: 2000, category: "hair clip", rating: 4.9, img: "https://media.istockphoto.com/id/1277309174/photo/these-hair-clips-are-flattering-on-everyone.jpg?s=612x612&w=0&k=20&c=QwuSRTG1F_D8htk7UtT2NmbSfMm6uYthkGIiJDAQWdQ=", desc: "Premium hair structure." },
     { id: 2, name: "Hair bands", price: 1000, category: "Hair bands", rating: 4.8, img: "WhatsApp Image 2026-06-06 at 16.03.57.jpeg", desc: "Seamless double-drawn natural weave tracks." },
-    {id: 3, name: "Bobby pins" ,price:1500 ,category: "bobby pins" ,rating :4.6 , img :"https://i.ebayimg.com/images/g/AlQAAOSwR6plzucy/s-l400.jpg" ,desc :"beauty"},
+    {id: 3, name: "Bobby pins" ,price:1500 ,category: "bobby pins" ,rating :4.6 , img :"https://www.humblebeeandme.com/wp-content/uploads/13-05-17-pic01.jpg" ,desc :"beauty"},
     { id: 4, name: "Decorative headbands", price: 3000, category: "Decorative headbands", rating: 4.6, img: "https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/DIY-Headbands.jpg", desc: "Soft padded feminine detail presentation piece." },
 ];
 

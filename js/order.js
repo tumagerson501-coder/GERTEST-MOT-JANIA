@@ -1,5 +1,5 @@
 emailjs.init({
-    publicKey: "neW_HTlcmb4UHtJoG"
+    publicKey: "ywamqqBZAkqJJZ_Py"
 });
 
 const form = document.getElementById("contact-form");
@@ -14,8 +14,8 @@ form.addEventListener("submit", function(event){
     submitBtn.textContent = "Sending...";
 
     emailjs.sendForm(
-        "service_f8kkp1i",
-        "template_lwkeamk",
+        "service_6k1t1rj",
+        "template_5r3tsij",
         form
     )
     .then(() => {
